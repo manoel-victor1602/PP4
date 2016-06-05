@@ -3,28 +3,33 @@ package br.uea.Questoes;
 import br.uea.Data.Data;
 import br.uea.Produto.Genero;
 import br.uea.Produto.Marca;
+import br.uea.Produto.Produto;
 import br.uea.Supermercado.Carrinho;
 import br.uea.Supermercado.Estoque;
 import br.uea.Supermercado.ItemProduto;
 import br.uea.Supermercado.SupermercadoWeb;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AP2Questao2 {
 
     public static void mostraItemProduto(ItemProduto it, Data data){
-        System.out.println(it.getCodigo() + "   " +
+        System.out.println(it.getProduto().getCodigo() + "   " +
                            it.getProduto().getNome() + "        " +
-                           it.getProduto().getMarca() + "    " +
+                           it.getProduto().getGenero().getNome() + "        " +
+                           it.getProduto().getMarca().getNome() + "    " +
                            it.getProduto().getPreco() + "     " +
-                           it.getValidade() + " " +
-                           it.getValidade().antes(data));
+                           it.getValidade()._toString() + "       " +
+                           it.getValidade().depois(data));
     }
     
     public static void main(String args[]){
         
-        int i, j;
+        int i, j, qtdTotal = 0, qtdLocal = 0;
         
         SupermercadoWeb SPW = new SupermercadoWeb();
+        
+        SPW.iniciaSupermercado();
         
         Carrinho carrinho = new Carrinho();
         Estoque estoque = new Estoque();
@@ -45,18 +50,20 @@ public class AP2Questao2 {
         System.out.println("#####ESTOQUE#####");
         System.out.println("COD NOME          GENERO        MARCA     PRECO   VALIDADE   VALIDO?");
         System.out.println("--- ----          ------        -----     -----   --------   -------");
-        
+
         for(i = 0; i < generos.length; i++){
-            for(j = 0; j < produtos.length; j++){
-                if(produtos[j].getProduto().getGenero() == generos[i]){
-                    mostraItemProduto(produtos[j],data);
-                }
+            for(j = 0,qtdLocal = 0; j < produtos.length; j++){
+                    if(generos[i].getNome().equals(produtos[j].getProduto().getGenero().getNome())){
+                        mostraItemProduto(produtos[j],data);
+                        qtdTotal++;
+                        qtdLocal++;
+                    }
             }
-            
-            System.out.println("TOTAL: " + j + "itens.");
+            if(qtdLocal != 0)
+                System.out.println("TOTAL: " + qtdLocal + " itens.");
         }
         
-        System.out.println("TOTAL: " + i + "itens.");
+        System.out.println("\nTOTAL: " + qtdTotal + " itens.");
         
     }
 }

@@ -40,6 +40,7 @@ public class SupermercadoWeb {
         marcas.add(parmalat);
         marcas.add(itambe);
         
+        Produto presuntoPerdigao = new Produto(4, "Perdigao", (float) 10.4, perdigao, presunto);
         Produto leiteNinho = new Produto(1,"Ninho", (float) 7.50, nestle, leite);
         Produto leiteMolico = new Produto(2,"Molico",(float) 3.23, nestle, leite);
         Produto leiteVida = new Produto(3,"Vida", (float) 4.20, parmalat, leite);
@@ -47,14 +48,17 @@ public class SupermercadoWeb {
         Data validade1 = new Data(11,4,2010);
         Data validade2 = new Data(11,10,2010);
         Data validade3 = new Data(26,11,2010);
+        Data validade4 = new Data(30,12,2011);
         
         ItemProduto item1 = new ItemProduto(validade1, leiteNinho);
         ItemProduto item2 = new ItemProduto(validade2, leiteMolico);
         ItemProduto item3 = new ItemProduto(validade3, leiteVida);
+        ItemProduto item4 = new ItemProduto(validade4, presuntoPerdigao);
         
         itens.add(item1);
         itens.add(item2);
         itens.add(item3);
+        itens.add(item4);
         
     }
     
