@@ -16,14 +16,15 @@ public class Produto {
     
     private SupermercadoWeb mercado = new SupermercadoWeb();
 
-    Produto(int codigo, String nome, float preco, Marca marca){
-        this.codigo = codigo;
+    public Produto() {
+    
+    }
+
+    public Produto(int cod, String nome, float preco, Marca marca) {
+        this.codigo = cod;
         this.nome = nome;
         this.preco = preco;
         this.marca = marca;
-    }
-
-    public Produto() {
     }
     
     public Marca getMarca(){
@@ -36,6 +37,14 @@ public class Produto {
     
     public float getPreco(){
         return this.preco;
+    }
+    
+    public int getCodigo(){
+        return this.codigo;
+    }
+    
+    public String getNome(){
+        return this.nome;
     }
     
 }

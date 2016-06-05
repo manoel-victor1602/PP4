@@ -12,8 +12,17 @@ public class ItemProduto {
     private Produto produto = new Produto();
     private Carrinho carrinho = new Carrinho();
     
+    ItemProduto(Data validade, Produto produto){
+        this.validade = validade;
+        this.produto = produto;
+    }
+    
     public Produto getProduto(){
         return this.produto;
+    }
+    
+    public void setProduto(Produto produto){
+        this.produto = produto;
     }
     
     public boolean valido(){
@@ -38,6 +47,10 @@ public class ItemProduto {
     
     public Long getCodigo(){
         return this.codigo;
+    }
+    
+    public Data getValidade(){
+        return this.validade;
     }
     
 }
