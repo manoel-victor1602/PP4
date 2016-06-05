@@ -3,10 +3,9 @@ package br.uea.Supermercado;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Carrinho {
+public class Carrinho{
     
     private ArrayList<ItemProduto> itens;
-    private SupermercadoWeb mercado = new SupermercadoWeb();
     
     public void adicionaItem(ItemProduto item, Estoque estoque){
         

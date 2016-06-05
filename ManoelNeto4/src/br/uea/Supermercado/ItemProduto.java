@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ItemProduto {
 
-    Long codigo;
+    int codigo;
     
     private Data validade = new Data();
     private Produto produto = new Produto();
@@ -45,7 +45,7 @@ public class ItemProduto {
         
     }
     
-    public Long getCodigo(){
+    public int getCodigo(){
         return this.codigo;
     }
     

@@ -13,18 +13,17 @@ public class Produto {
     private ArrayList<ItemProduto> itens;
     private Marca marca = new Marca();
     private Genero genero = new Genero();
-    
-    private SupermercadoWeb mercado = new SupermercadoWeb();
 
     public Produto() {
     
     }
 
-    public Produto(int cod, String nome, float preco, Marca marca) {
+    public Produto(int cod, String nome, float preco, Marca marca, Genero genero) {
         this.codigo = cod;
         this.nome = nome;
         this.preco = preco;
         this.marca = marca;
+        this.genero = genero;
     }
     
     public Marca getMarca(){

@@ -7,27 +7,20 @@ import br.uea.Genero.Presunto;
 import br.uea.Produto.Genero;
 import br.uea.Produto.Marca;
 import br.uea.Produto.Produto;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SupermercadoWeb {
 
-    private Carrinho carrinho;
-    private Estoque estoque;
-    private ArrayList<Marca> marcas;
-    private ArrayList<Produto> produtos;
-    private ArrayList<Genero> generos;
-    private ArrayList<ItemProduto> itens;
+    private final Carrinho carrinho = new Carrinho();
+    private final Estoque estoque = new Estoque();
+    private final ArrayList<Marca> marcas = new ArrayList<>();
+    private final ArrayList<Produto> produtos = new ArrayList<>();
+    private final ArrayList<Genero> generos = new ArrayList<>();
+    private final ArrayList<ItemProduto> itens = new ArrayList<>();
     
-    private void iniciaSupermercado(){
-        this.carrinho = new Carrinho();
-        this.estoque = new Estoque();
-        this.marcas = new ArrayList<Marca>();
-        this.produtos = new ArrayList<Produto>();
-        this.generos = new ArrayList<Genero>();
-        this.itens = new ArrayList<ItemProduto>();
-        
+    public void iniciaSupermercado(){
+  
         Genero leite = new Leite("leite");
         Genero presunto = new Presunto("presunto");
         Genero achocolatado = new Achocolatado("achocolatado");
@@ -47,23 +40,26 @@ public class SupermercadoWeb {
         marcas.add(parmalat);
         marcas.add(itambe);
         
-        Produto leiteNinho = new Produto(1,"Ninho", (float) 7.50, nestle);
-        Produto leiteMolico = new Produto(2,"Molico",(float) 3.23, nestle);
-        Produto leiteVida = new Produto(3,"Vida", (float) 4.20, parmalat);
+        Produto leiteNinho = new Produto(1,"Ninho", (float) 7.50, nestle, leite);
+        Produto leiteMolico = new Produto(2,"Molico",(float) 3.23, nestle, leite);
+        Produto leiteVida = new Produto(3,"Vida", (float) 4.20, parmalat, leite);
         
         Data validade1 = new Data(11,4,2010);
         Data validade2 = new Data(11,10,2010);
         Data validade3 = new Data(26,11,2010);
         
-        
-        ItemProduto item1 = new ItemProduto(validade1,leiteNinho);
+        ItemProduto item1 = new ItemProduto(validade1, leiteNinho);
         ItemProduto item2 = new ItemProduto(validade2, leiteMolico);
         ItemProduto item3 = new ItemProduto(validade3, leiteVida);
+        
+        itens.add(item1);
+        itens.add(item2);
+        itens.add(item3);
         
     }
     
     public SupermercadoWeb(){
-        iniciaSupermercado();
+        
     }
     
     public List getMarcas(){
@@ -81,4 +77,8 @@ public class SupermercadoWeb {
     public Carrinho getCarrinho(){
         return this.carrinho;
     }   
+    
+    public List getGeneros(){
+        return this.generos;
+    }
 }

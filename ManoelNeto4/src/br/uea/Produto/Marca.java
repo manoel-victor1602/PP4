@@ -5,17 +5,25 @@ import java.util.ArrayList;
 
 public class Marca {
 
-    private final String nome;
-    private SupermercadoWeb mercado = new SupermercadoWeb();
+    private String nome;
     
     private ArrayList<Produto> produtos;
+    private SupermercadoWeb mercado;
     
     public Marca(String nome){
         this.nome = nome;
     }
 
     public Marca() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    }
+    
+    public String getNome(){
+        return this.nome;
+    }
+    
+    public void setNome(String nome){
+        this.nome = nome;
     }
     
 }

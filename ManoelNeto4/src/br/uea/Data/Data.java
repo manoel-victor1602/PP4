@@ -34,7 +34,11 @@ public class Data {
     
     public boolean antes(Data data){
         
-        if(this.dia < data.dia && this.mes <= data.mes && this.ano <= data.ano)
+        if(this.ano < data.ano)
+            return true;
+        else if(this.ano <= data.ano && this.mes < data.mes)
+            return true;
+        else if(this.ano <= data.ano && this.mes <= data.mes && this.dia < data.dia)
             return true;
         else
             return false;
@@ -42,7 +46,11 @@ public class Data {
     
     public boolean depois(Data data){
         
-        if(this.dia > data.dia && this.mes >= data.mes && this.ano >= data.ano)
+        if(this.ano > data.ano)
+            return true;
+        else if(this.ano == data.ano && this.mes > data.mes)
+            return true;
+        else if(this.ano == data.ano && this.mes == data.mes && this.dia > data.dia)
             return true;
         else
             return false;

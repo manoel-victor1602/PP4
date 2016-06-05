@@ -3,38 +3,34 @@ package br.uea.Questoes;
 import br.uea.Data.Data;
 import br.uea.Produto.Genero;
 import br.uea.Produto.Marca;
-import br.uea.Produto.Produto;
 import br.uea.Supermercado.Carrinho;
 import br.uea.Supermercado.Estoque;
 import br.uea.Supermercado.ItemProduto;
 import br.uea.Supermercado.SupermercadoWeb;
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AP2Questao1 {
+public class AP2Questao2 {
 
     public static void mostraItemProduto(ItemProduto it, Data data){
-        System.out.println(it.getProduto().getCodigo() + "   " +
+        System.out.println(it.getCodigo() + "   " +
                            it.getProduto().getNome() + "        " +
-                           it.getProduto().getGenero().getNome() + "        " +
-                           it.getProduto().getMarca().getNome() + "    " +
+                           it.getProduto().getMarca() + "    " +
                            it.getProduto().getPreco() + "     " +
-                           it.getValidade()._toString() + "       " +
-                           it.getValidade().depois(data));
+                           it.getValidade() + " " +
+                           it.getValidade().antes(data));
     }
     
     public static void main(String args[]){
         
-        int i;
+        int i, j;
         
         SupermercadoWeb SPW = new SupermercadoWeb();
-        
-        SPW.iniciaSupermercado();
         
         Carrinho carrinho = new Carrinho();
         Estoque estoque = new Estoque();
         Marca[] marcas = new Marca[SPW.getMarcas().size()];
         ItemProduto[] produtos = new ItemProduto[SPW.getProdutos().size()];
+        Genero[] generos = new Genero[SPW.getGeneros().size()];
         
         Data data = new Data(20,5,2010);
 
@@ -42,6 +38,7 @@ public class AP2Questao1 {
         estoque = SPW.getEstoque();
         SPW.getMarcas().toArray(marcas);
         SPW.getProdutos().toArray(produtos);
+        SPW.getGeneros().toArray(generos);
         
         Scanner s = new Scanner(System.in);
         
@@ -49,11 +46,17 @@ public class AP2Questao1 {
         System.out.println("COD NOME          GENERO        MARCA     PRECO   VALIDADE   VALIDO?");
         System.out.println("--- ----          ------        -----     -----   --------   -------");
         
-        for(i = 0; i < produtos.length; i++){
-            mostraItemProduto(produtos[i], data);
+        for(i = 0; i < generos.length; i++){
+            for(j = 0; j < produtos.length; j++){
+                if(produtos[j].getProduto().getGenero() == generos[i]){
+                    mostraItemProduto(produtos[j],data);
+                }
+            }
+            
+            System.out.println("TOTAL: " + j + "itens.");
         }
         
-        System.out.println("TOTAL: " + i + " itens.");
+        System.out.println("TOTAL: " + i + "itens.");
         
     }
 }

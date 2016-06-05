@@ -9,8 +9,6 @@ import java.util.List;
 public class Estoque {
 
     private ArrayList<ItemProduto> itens;
-    private SupermercadoWeb mercado = new SupermercadoWeb();
-    private final Marca marca = new Marca();
     
     public void entraItem(ItemProduto item){
         itens.add(item);
@@ -26,8 +24,7 @@ public class Estoque {
     public List getItens(Marca marca){
 
         ItemProduto[] items = new ItemProduto[itens.size()];
-        ArrayList<ItemProduto> itensMarca = new ArrayList<ItemProduto>();
-        
+        ArrayList<ItemProduto> itensMarca = new ArrayList<>();
         
         itens.toArray(items);
         
