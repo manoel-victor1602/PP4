@@ -12,11 +12,11 @@ import br.uea.Supermercado.SupermercadoWeb;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AP2Questao2 {
+public class AP2Questao3 {
     
     public static void main(String args[]){
         
-        int i, j, qtdTotal = 0, qtdLocal = 0;
+        int i, j, k, qtd = 0;
         
         SupermercadoWeb SPW = new SupermercadoWeb();
         
@@ -43,19 +43,21 @@ public class AP2Questao2 {
         System.out.println("---\t------------\t------------\t----------\t---------\t------------\t------");
 
         for(i = 0; i < generos.length; i++){
-            for(j = 0,qtdLocal = 0; j < produtos.length; j++){
-                    if(generos[i].getNome().equals(produtos[j].getProduto().getGenero().getNome())){
-                    	Auxiliar.mostraItemProduto(produtos[j],data);
-                        qtdTotal++;
-                        qtdLocal++;
+            for(j = 0; j < marcas.length; j++){
+                for(k = 0; k < produtos.length; k++){
+                    
+                    if(generos[i].getNome().equals(produtos[k].getProduto().getGenero().getNome())
+                       && marcas[j].getNome().equals(produtos[k].getProduto().getMarca().getNome())
+                       && produtos[k].getValidade().depois(data)){
+                    	Auxiliar.mostraItemProduto(produtos[k],data);
+                        qtd++;
                     }
-            }
-            if(qtdLocal != 0){
-                System.out.println("TOTAL: " + qtdLocal + " itens.");
+                    
+                }
             }
         }
         
-        System.out.println("\nTOTAL: " + qtdTotal + " itens.");
+        System.out.println("\nTOTAL: " + qtd + " itens.");
         
     }
 }

@@ -15,7 +15,7 @@ public class SupermercadoWeb {
     private final Carrinho carrinho = new Carrinho();
     private final Estoque estoque = new Estoque();
     private final ArrayList<Marca> marcas = new ArrayList<>();
-	private final ArrayList<Produto> produtos = new ArrayList<>();
+    private final ArrayList<Produto> produtos = new ArrayList<>();
     private final ArrayList<Genero> generos = new ArrayList<>();
     private final ArrayList<ItemProduto> itens = new ArrayList<>();
     
@@ -44,8 +44,8 @@ public class SupermercadoWeb {
         marcas.add(seara);
         
         Produto presuntoSeara = new Produto(5, "Defumado", (float) 7.39, seara, presunto);
-        Produto presuntoPeruSeara = new Produto(5, "Peru", (float) 5.23, seara, presunto);
-        Produto presuntoPerdigao = new Produto(4, "Perdigao", (float) 10.4, perdigao, presunto);
+        Produto presuntoPeruSeara = new Produto(6, "Peru", (float) 5.23, seara, presunto);
+        Produto presuntoPerdigao = new Produto(4, "Perdigao", (float) 10.40, perdigao, presunto);
         Produto leiteNinho = new Produto(1,"Ninho", (float) 7.50, nestle, leite);
         Produto leiteMolico = new Produto(2,"Molico",(float) 3.23, nestle, leite);
         Produto leiteVida = new Produto(3,"Vida", (float) 4.20, parmalat, leite);
