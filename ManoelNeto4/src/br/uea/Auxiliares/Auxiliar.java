@@ -6,17 +6,17 @@ import br.uea.Supermercado.ItemProduto;
 public class Auxiliar {
     public static void mostraItemProduto(ItemProduto it, Data data){
     	System.out.print(it.getProduto().getCodigo() + "\t");
-			if (it.getProduto().getNome().length()>6){
+			if (it.getProduto().getNome().length()>7){
 				System.out.print(it.getProduto().getNome() + "\t");
 			}else{
 				System.out.print(it.getProduto().getNome() + "\t\t");
 			}
-			if( it.getProduto().getGenero().getNome().length()>6){
+			if( it.getProduto().getGenero().getNome().length()>7){
 				System.out.print(it.getProduto().getGenero().getNome() + "\t");
 			}else{
 				System.out.print(it.getProduto().getGenero().getNome() + "\t\t");
 			}
-			if(it.getProduto().getMarca().getNome().length()>6){
+			if(it.getProduto().getMarca().getNome().length()>7){
 				System.out.print(it.getProduto().getMarca().getNome() + "\tR$");
 			}else{
 				System.out.print(it.getProduto().getMarca().getNome() + "\t\tR$");

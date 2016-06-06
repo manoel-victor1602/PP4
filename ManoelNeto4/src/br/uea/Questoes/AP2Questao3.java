@@ -42,8 +42,7 @@ public class AP2Questao3 {
         
         for(i = 0; i < generos.length; i++){
             for(j = 0; j < marcas.length; j++){
-                for(k = 0; k < produtos.length; k++){
-                    
+                for(k = 0; k < produtos.length; k++){                    
                     if(generos[i].getNome().equals(produtos[k].getProduto().getGenero().getNome())
                        && marcas[j].getNome().equals(produtos[k].getProduto().getMarca().getNome())
                        && produtos[k].getValidade().depois(data)){

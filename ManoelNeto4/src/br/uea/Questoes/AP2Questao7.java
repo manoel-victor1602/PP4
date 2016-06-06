@@ -50,16 +50,12 @@ public class AP2Questao7 {
         entrada = JOptionPane.showInputDialog("Digite a marca que você procura");
         
         
-        
-        
-        
-        //Questao 06 Parte 1
+
         for(i = 0; i < produtos.length; i++){
             if(produtos[i].getValidade().depois(data)==true && produtos[i].getProduto().getMarca().getNome().equals(entrada))
                 SPW.getCarrinho().adicionaItem(produtos[i], SPW.getEstoque());
         }
-        
-        //Questao 06 parte 2
+
         car = new ItemProduto[SPW.getCarrinho().getItens().size()];
         
         SPW.getCarrinho().getItens().toArray(car);
