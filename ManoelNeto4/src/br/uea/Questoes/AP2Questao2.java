@@ -37,10 +37,8 @@ public class AP2Questao2 {
         SPW.getGeneros().toArray(generos);
         
         Scanner s = new Scanner(System.in);
-        
-        System.out.println("#####ESTOQUE#####");
-        System.out.println("COD\tNOME\t\tGENERO\t\tMARCA\t\tPRECO\t\tVALIDADE\tVALIDO?");
-        System.out.println("---\t------------\t------------\t----------\t---------\t------------\t------");
+
+        Auxiliar.mostraMenu();
 
         for(i = 0; i < generos.length; i++){
             for(j = 0,qtdLocal = 0; j < produtos.length; j++){

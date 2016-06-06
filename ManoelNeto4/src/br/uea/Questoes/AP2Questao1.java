@@ -11,34 +11,9 @@ import br.uea.Supermercado.SupermercadoWeb;
 import br.uea.Auxiliares.Auxiliar;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import br.uea.Auxiliares.*;
 
 public class AP2Questao1 {
-
-    public static void mostraItemProduto(ItemProduto it, Data data){
-    	System.out.print(it.getProduto().getCodigo() + "\t");
-        		if (it.getProduto().getNome().length()>6){
-        			System.out.print(it.getProduto().getNome() + "\t");
-        		}else{
-        			System.out.print(it.getProduto().getNome() + "\t\t");
-        		}
-        		if( it.getProduto().getGenero().getNome().length()>6){
-        			System.out.print(it.getProduto().getGenero().getNome() + "\t");
-        		}else{
-        			System.out.print(it.getProduto().getGenero().getNome() + "\t\t");
-        		}
-        		if(it.getProduto().getMarca().getNome().length()>6){
-        			System.out.print(it.getProduto().getMarca().getNome() + "\t");
-        		}else{
-        			System.out.print(it.getProduto().getMarca().getNome() + "\t\t");
-        		}
-    		System.out.print(it.getProduto().getPreco() + "\t\t" +
-    						 it.getValidade()._toString() + " \t" +
-    					     it.getValidade().depois(data));
-        System.out.println("");
-        		
-        		
-    }
     
     public static void main(String args[]){
         
@@ -62,9 +37,7 @@ public class AP2Questao1 {
         
         Scanner s = new Scanner(System.in);
         
-        System.out.println("#####ESTOQUE#####");
-        System.out.println("COD\tNOME\t\tGENERO\t\tMARCA\t\tPRECO\t\tVALIDADE\tVALIDO?");
-        System.out.println("---\t------------\t------------\t----------\t---------\t------------\t------");
+        Auxiliar.mostraMenu();
 
         for(i = 0; i < produtos.length; i++){
         	Auxiliar.mostraItemProduto(produtos[i], data);

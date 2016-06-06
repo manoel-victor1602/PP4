@@ -45,9 +45,7 @@ public class AP2Questao5 {
         
         SPW.getCarrinho().getItens().toArray(car);
         
-        System.out.println("#####CARRINHO#####");
-        System.out.println("COD\tNOME\t\tGENERO\t\tMARCA\t\tPRECO\t\tVALIDADE\tVALIDO?");
-        System.out.println("---\t------------\t------------\t----------\t---------\t------------\t------");
+        Auxiliar.mostraMenu();
         
         for(i = 0; i < SPW.getCarrinho().getItens().size(); i++){
             Auxiliar.mostraItemProduto(car[i], data);
@@ -55,15 +53,13 @@ public class AP2Questao5 {
         
         System.out.println("\nNumero de itens no carrinho: " + i);
         
-        System.out.println("\nTotal a pagar: RS" + SPW.getCarrinho().totalAPagar());
+        System.out.printf("\nTotal a pagar: RS%.2f\n\n" , SPW.getCarrinho().totalAPagar());
         // fim da 02 da questao 5
         
         // 03 da questao 5
         SPW.getEstoque().getItens().toArray(estoqueAux);
         
-        System.out.println("\n\n#####ESTOQUE#####");
-        System.out.println("COD\tNOME\t\tGENERO\t\tMARCA\t\tPRECO\t\tVALIDADE\tVALIDO?");
-        System.out.println("---\t------------\t------------\t----------\t---------\t------------\t------");
+        Auxiliar.mostraMenu();
         
         for(i = 0; i < SPW.getEstoque().qtdItens(); i++){
             Auxiliar.mostraItemProduto(estoqueAux[i],data);

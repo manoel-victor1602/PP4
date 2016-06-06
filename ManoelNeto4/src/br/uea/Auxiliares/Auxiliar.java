@@ -26,4 +26,11 @@ public class Auxiliar {
 					     it.getValidade().depois(data));
 		System.out.println("");
     }
+    
+    public static void mostraMenu(){
+        System.out.println("#####ESTOQUE#####");
+        System.out.println("COD\tNOME\t\tGENERO\t\tMARCA\t\tPRECO\t\tVALIDADE\tVALIDO?");
+        System.out.println("---\t------------\t------------\t----------\t---------\t------------\t------");
+    }
+    
 }
