@@ -11,7 +11,7 @@ import br.uea.Data.Data;
 import br.uea.Produto.Genero;
 import br.uea.Produto.Marca;
 import br.uea.Supermercado.Carrinho;
-			import br.uea.Supermercado.Estoque;
+import br.uea.Supermercado.Estoque;
 import br.uea.Supermercado.ItemProduto;
 import br.uea.Supermercado.SupermercadoWeb;
 
