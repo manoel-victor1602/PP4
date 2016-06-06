@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Estoque {
 
-    private ArrayList<ItemProduto> itens;
+    private ArrayList<ItemProduto> itens = new ArrayList<ItemProduto>();
     
     public void entraItem(ItemProduto item){
         itens.add(item);

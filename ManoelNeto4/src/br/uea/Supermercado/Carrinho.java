@@ -5,12 +5,14 @@ import java.util.List;
 
 public class Carrinho{
     
-    private ArrayList<ItemProduto> itens;
+    private ArrayList<ItemProduto> itens = new ArrayList<ItemProduto>();
     
     public void adicionaItem(ItemProduto item, Estoque estoque){
         
-        itens.add(estoque.saiItem(item));
+        itens.add(item);
         
+        estoque.saiItem(item);
+             
     }
     
     public void removeItem(ItemProduto item, Estoque estoque){

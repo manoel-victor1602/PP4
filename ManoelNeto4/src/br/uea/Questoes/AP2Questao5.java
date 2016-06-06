@@ -26,6 +26,7 @@ public class AP2Questao5 {
         ItemProduto[] produtos = new ItemProduto[SPW.getProdutos().size()];
         Genero[] generos = new Genero[SPW.getGeneros().size()];
         ItemProduto[] car;
+        ItemProduto[] estoqueAux = new ItemProduto[SPW.getEstoque().qtdItens()];
         
         Data data = new Data(20,5,2010);
 
@@ -36,22 +37,40 @@ public class AP2Questao5 {
         SPW.getGeneros().toArray(generos);
         
         for(i = 0; i < produtos.length; i++){
-            if((produtos[i].getCodigo() % 2) != 0)
+            if(produtos[i].getProduto().getCodigo() % 2 != 0)
                 SPW.getCarrinho().adicionaItem(produtos[i], SPW.getEstoque());
         }
-        
+        // 02 parte da questao 5
         car = new ItemProduto[SPW.getCarrinho().getItens().size()];
         
         SPW.getCarrinho().getItens().toArray(car);
+        
+        System.out.println("#####CARRINHO#####");
+        System.out.println("COD\tNOME\t\tGENERO\t\tMARCA\t\tPRECO\t\tVALIDADE\tVALIDO?");
+        System.out.println("---\t------------\t------------\t----------\t---------\t------------\t------");
         
         for(i = 0; i < SPW.getCarrinho().getItens().size(); i++){
             Auxiliar.mostraItemProduto(car[i], data);
         }
         
-        System.out.println("Numero de itens no carrinho: " + i);
+        System.out.println("\nNumero de itens no carrinho: " + i);
         
-        System.out.println("Total a pagar: RS" + SPW.getCarrinho().totalAPagar());
+        System.out.println("\nTotal a pagar: RS" + SPW.getCarrinho().totalAPagar());
+        // fim da 02 da questao 5
+        
+        // 03 da questao 5
+        SPW.getEstoque().getItens().toArray(estoqueAux);
+        
+        System.out.println("\n\n#####ESTOQUE#####");
+        System.out.println("COD\tNOME\t\tGENERO\t\tMARCA\t\tPRECO\t\tVALIDADE\tVALIDO?");
+        System.out.println("---\t------------\t------------\t----------\t---------\t------------\t------");
+        
+        for(i = 0; i < SPW.getEstoque().qtdItens(); i++){
+            Auxiliar.mostraItemProduto(estoqueAux[i],data);
+        }
+        
+        System.out.println("Total de itens no estoque: " + i);
+        //fim da 03 da questao 5
         
     }
-    
 }

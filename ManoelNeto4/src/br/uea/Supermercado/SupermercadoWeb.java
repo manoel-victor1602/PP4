@@ -49,8 +49,7 @@ public class SupermercadoWeb {
         Produto leiteNinho = new Produto(1,"Ninho", (float) 7.50, nestle, leite);
         Produto leiteMolico = new Produto(2,"Molico",(float) 3.23, nestle, leite);
         Produto leiteVida = new Produto(3,"Vida", (float) 4.20, parmalat, leite);
-        
-        
+          
         
         Data validade1 = new Data(11,4,2010);
         Data validade2 = new Data(11,10,2010);
@@ -66,6 +65,12 @@ public class SupermercadoWeb {
         ItemProduto item5 = new ItemProduto(validade5, presuntoSeara);
         ItemProduto item6 = new ItemProduto(validade6, presuntoPeruSeara);
         
+        estoque.entraItem(item1);
+        estoque.entraItem(item2);
+        estoque.entraItem(item3);
+        estoque.entraItem(item4);
+        estoque.entraItem(item5);
+        estoque.entraItem(item6);
         
         itens.add(item1);
         itens.add(item2);
