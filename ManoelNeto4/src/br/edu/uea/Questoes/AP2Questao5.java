@@ -4,11 +4,8 @@ import br.edu.uea.FuncoesAux.Auxiliar;
 import br.edu.uea.Data.Data;
 import br.edu.uea.Produto.Genero;
 import br.edu.uea.Produto.Marca;
-import br.edu.uea.Supermercado.Carrinho;
-import br.edu.uea.Supermercado.Estoque;
 import br.edu.uea.Supermercado.ItemProduto;
 import br.edu.uea.Supermercado.SupermercadoWeb;
-import java.util.ArrayList;
 
 public class AP2Questao5 {
 
@@ -20,8 +17,6 @@ public class AP2Questao5 {
         
         SPW.iniciaSupermercado();
         
-        Carrinho carrinho = new Carrinho();
-        Estoque estoque = new Estoque();
         Marca[] marcas = new Marca[SPW.getMarcas().size()];
         ItemProduto[] produtos = new ItemProduto[SPW.getProdutos().size()];
         Genero[] generos = new Genero[SPW.getGeneros().size()];
@@ -30,8 +25,6 @@ public class AP2Questao5 {
         
         Data data = new Data(20,5,2010);
 
-        carrinho = SPW.getCarrinho();
-        estoque = SPW.getEstoque();
         SPW.getMarcas().toArray(marcas);
         SPW.getProdutos().toArray(produtos);
         SPW.getGeneros().toArray(generos);
@@ -39,16 +32,17 @@ public class AP2Questao5 {
         for(i = 0; i < produtos.length; i++){
             if(produtos[i].getProduto().getCodigo() % 2 != 0)
                 SPW.getCarrinho().adicionaItem(produtos[i], SPW.getEstoque());
-        }
+        }        
+        
         // 02 parte da questao 5
         car = new ItemProduto[SPW.getCarrinho().getItens().size()];
         
         SPW.getCarrinho().getItens().toArray(car);
         
-        Auxiliar.mostraMenu();
+        Auxiliar.mostraMenu(2);
         
         for(i = 0; i < SPW.getCarrinho().getItens().size(); i++){
-            Auxiliar.mostraItemProduto(car[i], data);
+            Auxiliar.mostraItemProduto(car[i], data,0);
         }
         
         System.out.println("\nNumero de itens no carrinho: " + i);
@@ -59,10 +53,10 @@ public class AP2Questao5 {
         // 03 da questao 5
         SPW.getEstoque().getItens().toArray(estoqueAux);
         
-        Auxiliar.mostraMenu();
+        Auxiliar.mostraMenu(1);
         
         for(i = 0; i < SPW.getEstoque().qtdItens(); i++){
-            Auxiliar.mostraItemProduto(estoqueAux[i],data);
+            Auxiliar.mostraItemProduto(estoqueAux[i],data,0);
         }
         
         System.out.println("Total de itens no estoque: " + i);

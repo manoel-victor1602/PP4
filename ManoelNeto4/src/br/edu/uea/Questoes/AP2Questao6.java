@@ -59,11 +59,11 @@ public class AP2Questao6 {
 	        
 	        SPW.getCarrinho().getItens().toArray(car);
 	        
-	        Auxiliar.mostraMenu();
+	        Auxiliar.mostraMenu(2);
 	        
 	        
 	        for(i = 0; i < SPW.getCarrinho().getItens().size(); i++){
-	            strauxshuffle= Auxiliar.mostraItemProduto(car[i], data);
+	            strauxshuffle= Auxiliar.mostraItemProduto(car[i], data,1);
 	            random.add(strauxshuffle);
 	        }
 	        
@@ -82,10 +82,10 @@ public class AP2Questao6 {
 	        
 	        SPW.getEstoque().getItens().toArray(estoqueAux);
 	        
-	        Auxiliar.mostraMenu();
+	        Auxiliar.mostraMenu(1);
 	        
 	        for(i = 0; i < SPW.getEstoque().qtdItens(); i++){
-	            Auxiliar.mostraItemProduto(estoqueAux[i],data);
+	            Auxiliar.mostraItemProduto(estoqueAux[i],data,0);
 	        }
 	        
 	        System.out.println("Total de itens no estoque: " + i);

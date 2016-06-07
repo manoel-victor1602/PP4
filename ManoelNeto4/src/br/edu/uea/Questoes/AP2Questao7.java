@@ -16,39 +16,33 @@ import br.edu.uea.Supermercado.SupermercadoWeb;
 
 public class AP2Questao7 {
 
-	public AP2Questao7() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public static void main(String[] args) {
-		int i;
+    public static void main(String[] args) {
+    
+        int i;
         
-      	ArrayList<String> random = new ArrayList<>();
-      	String strauxshuffle; 
+        Data data = new Data(20, 5, 2010);
+        
         SupermercadoWeb SPW = new SupermercadoWeb();
         
         SPW.iniciaSupermercado();
         
-        Carrinho carrinho = new Carrinho();
-        Estoque estoque = new Estoque();
         Marca[] marcas = new Marca[SPW.getMarcas().size()];
         ItemProduto[] produtos = new ItemProduto[SPW.getProdutos().size()];
         Genero[] generos = new Genero[SPW.getGeneros().size()];
         ItemProduto[] car;
-        ItemProduto[] estoqueAux = new ItemProduto[SPW.getEstoque().qtdItens()];
-        
-        Data data = new Data(20,5,2010);
+       
 
-        carrinho = SPW.getCarrinho();
-        estoque = SPW.getEstoque();
         SPW.getMarcas().toArray(marcas);
         SPW.getProdutos().toArray(produtos);
         SPW.getGeneros().toArray(generos);
         
         String entrada;
         
-        entrada = JOptionPane.showInputDialog("Digite a marca que voc� procura");
+        entrada = JOptionPane.showInputDialog("Digite a marca que voce procura");
         
+        entrada = entrada.toLowerCase();
+        
+        entrada = entrada.substring(0, 1).toUpperCase() +  entrada.substring(1);
         
 
         for(i = 0; i < produtos.length; i++){
@@ -60,14 +54,14 @@ public class AP2Questao7 {
         
         SPW.getCarrinho().getItens().toArray(car);
         
-        Auxiliar.mostraMenu();
+        Auxiliar.mostraMenu(2);
         
         
         for(i = 0; i < SPW.getCarrinho().getItens().size(); i++){
-            Auxiliar.mostraItemProduto(car[i], data);
+            Auxiliar.mostraItemProduto(car[i], data,0);
         }
         
-        System.out.println("\nNumero de itens no carrinho: " + i);
+        System.out.println("\nNumero de itens no estoque: " + i);
 
 	}
 

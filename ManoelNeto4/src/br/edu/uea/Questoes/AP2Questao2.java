@@ -18,6 +18,7 @@ public class AP2Questao2 {
         
         int i, j, qtdTotal = 0, qtdLocal = 0;
         
+        Data data = new Data(20, 5, 2010);
         SupermercadoWeb SPW = new SupermercadoWeb();
         
         SPW.iniciaSupermercado();
@@ -27,8 +28,7 @@ public class AP2Questao2 {
         Marca[] marcas = new Marca[SPW.getMarcas().size()];
         ItemProduto[] produtos = new ItemProduto[SPW.getProdutos().size()];
         Genero[] generos = new Genero[SPW.getGeneros().size()];
-        
-        Data data = new Data(20,5,2010);
+
 
         carrinho = SPW.getCarrinho();
         estoque = SPW.getEstoque();
@@ -38,18 +38,18 @@ public class AP2Questao2 {
         
         Scanner s = new Scanner(System.in);
 
-        Auxiliar.mostraMenu();
+        Auxiliar.mostraMenu(1);
 
         for(i = 0; i < generos.length; i++){
             for(j = 0,qtdLocal = 0; j < produtos.length; j++){
                     if(generos[i].getNome().equals(produtos[j].getProduto().getGenero().getNome())){
-                    	Auxiliar.mostraItemProduto(produtos[j],data);
+                    	Auxiliar.mostraItemProduto(produtos[j],data,0);
                         qtdTotal++;
                         qtdLocal++;
                     }
             }
             if(qtdLocal != 0){
-                System.out.println("TOTAL: " + qtdLocal + " itens.");
+                System.out.println("\nTOTAL: " + qtdLocal + " itens.\n");
             }
         }
         

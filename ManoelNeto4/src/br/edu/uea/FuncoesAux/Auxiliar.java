@@ -15,9 +15,10 @@ public class Auxiliar {
         
     }
     
-    public static String mostraItemProduto(ItemProduto it, Data data){
+    public static String mostraItemProduto(ItemProduto it, Data data, int op){
         
         String cod, nome, genero, marca, preco, validade, valido;
+        
         
         cod = Integer.toString(it.getProduto().getCodigo());
         nome = it.getProduto().getNome();
@@ -76,14 +77,24 @@ public class Auxiliar {
         while(valido.length() < 12)
             valido += " ";
         //fim valido
+        if(op==0){
+            System.out.println(cod + nome + genero + marca + preco + validade + valido);
+            return null;
+        }else{
+            return (cod + nome + genero + marca + preco + validade + valido);
+        }
         
-        System.out.println(cod + nome + genero + marca + preco + validade + valido);
-        
-        return (cod + nome + genero + marca + preco + validade + valido);
     }
     
-    public static void mostraMenu(){
-        System.out.println("#####ESTOQUE#####");
+    public static void mostraMenu(int i){
+        
+        int carrinho = 2, estoque = 1;
+        
+        if(i == estoque)
+            System.out.println("#####ESTOQUE#####");
+        else
+            System.out.println("#####CARRINHO#####");
+        
         System.out.println("COD\tNOME\t\tGENERO\t\tMARCA\t\tPRECO\t\tVALIDADE\tVALIDO?");
         System.out.println("---\t------------\t------------\t----------\t---------\t------------\t------");
     }

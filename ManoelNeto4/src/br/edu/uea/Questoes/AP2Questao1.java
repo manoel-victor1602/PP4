@@ -17,29 +17,24 @@ public class AP2Questao1 {
     public static void main(String args[]){
         
         int i;
-        
+        Data data = new Data(20, 5, 2010);
         SupermercadoWeb SPW = new SupermercadoWeb();
         
         SPW.iniciaSupermercado();
         
-        Carrinho carrinho = new Carrinho();
-        Estoque estoque = new Estoque();
+        
         Marca[] marcas = new Marca[SPW.getMarcas().size()];
         ItemProduto[] produtos = new ItemProduto[SPW.getProdutos().size()];
         
-        Data data = new Data(20,5,2010);
-
-        carrinho = SPW.getCarrinho();
-        estoque = SPW.getEstoque();
         SPW.getMarcas().toArray(marcas);
         SPW.getProdutos().toArray(produtos);
         
         Scanner s = new Scanner(System.in);
         
-        Auxiliar.mostraMenu();
+        Auxiliar.mostraMenu(1);
 
         for(i = 0; i < produtos.length; i++)
-            Auxiliar.mostraItemProduto(produtos[i], data);
+            Auxiliar.mostraItemProduto(produtos[i], data,0);
        
         System.out.println("\nTOTAL: " + i + " itens.");
         

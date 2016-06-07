@@ -144,37 +144,47 @@ public class SupermercadoWeb {
         
         //*********************ITENS********************************************//
         
+        
+        
+        //leite 
         ItemProduto item1 = new ItemProduto(validade1, leiteNinho);
         ItemProduto item2 = new ItemProduto(validade2, leiteMolico);
         ItemProduto item3 = new ItemProduto(validade3, leiteVida);
-        ItemProduto item4 = new ItemProduto(validade4, presuntoPerdigao);
-        ItemProduto item5 = new ItemProduto(validade5, presuntoSeara);
-        ItemProduto item6 = new ItemProduto(validade6, presuntoPeruSeara);
-        ItemProduto item7 = new ItemProduto(validade7, presuntoFateado);
-        ItemProduto item8 = new ItemProduto(validade8, presuntoCozido);
-        ItemProduto item9 = new ItemProduto(validade9, achocolatadoToddy );
-        ItemProduto item10 = new ItemProduto(validade10, achocolatadoMagico);
-        ItemProduto item11 = new ItemProduto(validade11, achocolatadoToddynho );
-        ItemProduto item12 = new ItemProduto(validade12, achocolatadoNescau );
-        ItemProduto item13 = new ItemProduto(validade13, achocolatadoNescau2);
-        ItemProduto item14 = new ItemProduto(validade14, achocolatadoNesquik);        
-        ItemProduto item15 = new ItemProduto(validade15, leiteNan);
-        ItemProduto item16 = new ItemProduto(validade16, leiteIdeal);
-        ItemProduto item17 = new ItemProduto(validade17, leiteZymil);
-        ItemProduto item18 = new ItemProduto(validade18, leitePiracanjuba);
-        ItemProduto item19 = new ItemProduto(validade19, leitePiracanjubaDesna);
-        ItemProduto item20 = new ItemProduto(validade20, leiteElege);
-        ItemProduto item21 = new ItemProduto(validade21, leiteItalac);   
-        ItemProduto item22 = new ItemProduto(validade22, achocolatadoPronto);
-        ItemProduto item23 = new ItemProduto(validade23, achocolatadoProntoPequeno);
-        ItemProduto item24 = new ItemProduto(validade24, achocolatadoInstantaneo);
-        ItemProduto item25 = new ItemProduto(validade25, achocolatadoOvomaltine);
+        ItemProduto item4 = new ItemProduto(validade15, leiteNan);
+        ItemProduto item5 = new ItemProduto(validade16, leiteIdeal);
+        ItemProduto item6 = new ItemProduto(validade17, leiteZymil);
+        ItemProduto item7 = new ItemProduto(validade18, leitePiracanjuba);
+        ItemProduto item8 = new ItemProduto(validade19, leitePiracanjubaDesna);
+        ItemProduto item9 = new ItemProduto(validade20, leiteElege);
+        ItemProduto item10 = new ItemProduto(validade21, leiteItalac);  
+ 
+        //presunto
         
-        ItemProduto item26 = new ItemProduto(validade26, presuntoPamplona);
-        ItemProduto item27 = new ItemProduto(validade27, presuntoAurora);
-        ItemProduto item28 = new ItemProduto(validade28, presuntoAuroraCozido);
-        ItemProduto item29 = new ItemProduto(validade29, presuntoAuroraPorco);
-        ItemProduto item30 = new ItemProduto(validade30, presuntoPerdigaoPorco);
+        ItemProduto item11 = new ItemProduto(validade4, presuntoPerdigao);
+        ItemProduto item12 = new ItemProduto(validade26, presuntoPamplona);
+        ItemProduto item13 = new ItemProduto(validade27, presuntoAurora);
+        ItemProduto item14 = new ItemProduto(validade28, presuntoAuroraCozido);
+        ItemProduto item15 = new ItemProduto(validade29, presuntoAuroraPorco);
+        ItemProduto item16 = new ItemProduto(validade30, presuntoPerdigaoPorco);
+        ItemProduto item17 = new ItemProduto(validade5, presuntoSeara);
+        ItemProduto item18 = new ItemProduto(validade6, presuntoPeruSeara);
+        ItemProduto item19 = new ItemProduto(validade7, presuntoFateado);
+        ItemProduto item20 = new ItemProduto(validade8, presuntoCozido);
+        
+        
+        
+        //achocolatado
+        ItemProduto item21= new ItemProduto(validade9, achocolatadoToddy );
+        ItemProduto item22 = new ItemProduto(validade10, achocolatadoMagico);
+        ItemProduto item23 = new ItemProduto(validade11, achocolatadoToddynho );
+        ItemProduto item24 = new ItemProduto(validade12, achocolatadoNescau );
+        ItemProduto item25 = new ItemProduto(validade13, achocolatadoNescau2);
+        ItemProduto item26 = new ItemProduto(validade14, achocolatadoNesquik);         
+        ItemProduto item27 = new ItemProduto(validade22, achocolatadoPronto);
+        ItemProduto item28 = new ItemProduto(validade23, achocolatadoProntoPequeno);
+        ItemProduto item29 = new ItemProduto(validade24, achocolatadoInstantaneo);
+        ItemProduto item30 = new ItemProduto(validade25, achocolatadoOvomaltine);
+
         
         //**********************************FIM ITENS**************************//
         
